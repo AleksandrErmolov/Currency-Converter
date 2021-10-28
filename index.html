@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +8,99 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<body>
-    
 
-    
-<script src="index.js"></script>    
+<body>
+
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__logo">
+                <img src="./img/logo.png" alt="logo">
+            </div>
+            <nav class="header__nav nav">
+                <ul class="nav__list list-reset">
+                    <li class="nav__item">
+                        <a href="" class="nav__link nav__link--active">БАНК</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="" class="nav__link">БИЗНЕС</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="" class="nav__link">ИНВЕСТИЦИИ</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="" class="nav__link">СТРАХОВАНИЕ</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="" class="nav__link">МОБАЙЛ</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="" class="nav__link">ПУТЕШЕСТВИЯ</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="" class="nav__link">РАЗВЛЕЧЕНИЯ</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="header__button">Войти</button>
+        </div>
+    </header>
+
+
+    <main class="main">
+        <div class="first__screen container">
+            <h1 class="first__screen__title">Конвертер валют онлайн</h1>
+            <div class="calculate">
+                <div class="calculate__to">
+                    <p class="calculate__to__title">У меня есть</p>
+                    <div class="money__change">
+                        <button class="money__change__button money__change__button-active">RUB</button>
+                        <button class="money__change__button">USD</button>
+                        <button class="money__change__button">EUR</button>
+                        <button class="money__change__button">GBP</button>
+                        <select name="" id="">
+                        </select>
+                    </div>
+                    <div class="money_change_data">
+                        <input class="inpute" type="number" value="1">
+                        <p class="info_money">test</p>
+                    </div>
+                </div>
+
+
+                <div class="calculate-change">
+                    <button class="change-button"></button>
+                </div>
+
+
+                <div class="calculate__from">
+                    <p class="calculate__to__title">Хочу приобрести</p>
+
+                    <div class="money__change">
+                        <button class="money__change__button">RUB</button>
+                        <button class="money__change__button money__change__button-active">USD</button>
+                        <button class="money__change__button">EUR</button>
+                        <button class="money__change__button">GBP</button>
+                        <select name="" id="">
+                        </select>
+                    </div>
+                    <div class="money_change_data">
+                        <input class="inpute" type="number">
+                        <p class="info_money">test</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+
+
+    <footer class="fotter">
+
+    </footer>
+
+    <script src="index.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.container {
+    max-width: 952px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header__logo {
+    margin-right: 64px;
+}
+
+.list-reset {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #F5F5F6;
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+.nav__list {
+    display: flex;
+    gap: 20px;
+}
+
+.header__nav {
+    margin-right: 125px;
+}
+
+.nav__link {
+    font-size: 11px;
+    text-decoration: none;
+    color: #959BA4;
+    font-weight: 500;
+}
+
+.nav__link--active {
+    color: black;
+}
+
+.header__button {
+    width: 58px;
+    height: 33px;
+    background-color: white;
+    color: black;
+    font-size: 11px;
+    border: 0;
+    font-weight: 500;
+}
+
+/********************************** Первый экран ***********************************/
+
+.main {
+    margin-top: 0px;
+}
+
+.calculate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calculate__to {
+    display: flex;
+    flex-direction: column;
+}
+
+.calculate__to__title {
+    font-size: 12px;
+    color: #9F9F9F;
+    font-weight: 400;
+}
+
+.money__change {
+    border: 1px solid #959BA4;
+    display: flex;
+    color: #C6C6C6;
+    border: 0;
+    width: 259px;
+    height: 30px;
+}
+
+.money__change__button {
+    background-color: white;
+    border: 1px solid #C6C6C6;
+    color: #C6C6C6;
+}
+
+.money__change__button-active {
+    background-color: #833AE0;
+    color: white;
+}
+
+.change-button {
+    background-image: url('./img/changemoney.svg');
+    background-repeat: no-repeat;
+    width: 47px;
+    height: 40px;
+    border: 0;
+    text-align: center;
+    background-color: white;
+}
+
+.money_change_data {
+    padding: 10px;
+    width: 259px;
+    height: 102px;
+    margin-top: 20px;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.inpute {
+    width: 244px;
+    font-size: 36px;
+    font-weight: 700;
+    border: 0;
+    outline: none;
+}
+
+.info_money {
+    color: #C6C6C6;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
