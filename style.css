@@ -42,11 +42,7 @@ body {
 
 .nav__list {
     display: flex;
-    gap: 20px;
-}
-
-.header__nav {
-    margin-right: 125px;
+    gap: 25px;
 }
 
 .nav__link {
@@ -68,6 +64,14 @@ body {
     font-size: 11px;
     border: 0;
     font-weight: 500;
+    margin-left: auto;
+    transition: 0.3s;
+    border-radius: 3px;
+}
+
+.header__button:hover {
+    color: white;
+    background-color: #833AE0;
 }
 
 /********************************** Первый экран ***********************************/
@@ -100,6 +104,8 @@ body {
     border: 0;
     width: 259px;
     height: 30px;
+    display: grid;
+    grid-auto-flow: column;
 }
 
 .money__change__button {
@@ -108,9 +114,16 @@ body {
     color: #C6C6C6;
 }
 
-.money__change__button-active {
+.money__change__button-active-to {
     background-color: #833AE0;
     color: white;
+    transition: 0.3s;
+}
+
+.money__change__button-active-from {
+    background-color: #833AE0;
+    color: white;
+    transition: 0.3s;
 }
 
 .change-button {
