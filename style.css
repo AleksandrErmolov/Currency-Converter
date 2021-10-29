@@ -81,9 +81,14 @@ body {
 }
 
 .calculate {
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+}
+
+.calculate.active {
+    flex-direction: row-reverse;
 }
 
 .calculate__to {
@@ -118,12 +123,20 @@ body {
     background-color: #833AE0;
     color: white;
     transition: 0.3s;
+    box-shadow: 0 0 10px #833AE0;
+}
+
+.calculate-change {
+    margin-top: 90px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .money__change__button-active-from {
     background-color: #833AE0;
     color: white;
     transition: 0.3s;
+    box-shadow: 0 0 10px #833AE0;
 }
 
 .change-button {
@@ -144,6 +157,7 @@ body {
     border: 1px solid #E5E5E5;
     box-sizing: border-box;
     border-radius: 3px;
+    box-shadow: 0 0 10px #833AE0;
 }
 
 .inpute {
@@ -163,4 +177,9 @@ body {
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+select option {
+    background-color: white;
+    color: black;
 }
