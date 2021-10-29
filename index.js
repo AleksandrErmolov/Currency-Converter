@@ -6,6 +6,7 @@ const select = document.querySelectorAll(".list-currency")
 const allButtonTo = document.querySelector(".money__change-to")
 const allButtonFrom = document.querySelector(".money__change-from")
 
+
 allButtonTo.addEventListener("click", changeColorTo)
 allButtonFrom.addEventListener("click", changeColorFrom)
 allButtonTo.addEventListener("click", renderCurrencyOnButton)
@@ -71,35 +72,36 @@ function changeColorFrom(event) {
     button.classList.add("money__change__button-active-from")
 }
 
-
 //Генерируем значение по кнопкам в INPUT
 function renderCurrencyOnButton() {
+
+    let activeTo = document.querySelector(".money__change__button-active-to")
+    let activeFrom = document.querySelector(".money__change__button-active-from")
     let left = document.querySelector(".money__change__button-active-to").value
     let right = document.querySelector(".money__change__button-active-from").value
-    console.log(left)
-    console.log(right)
 
-    // if (left == right) {
-    //     inputFrom.value = inputTo.value
-    //     priceMoneyFrom.innerText = priceMoneyTo.innerText
-    // } else {
+    if (left === right) {
+        inputFrom.value = inputTo.value
+        priceMoneyFrom.innerText = `1 ${activeTo.value} = 1.0000 ${activeTo.value}`
+        priceMoneyTo.innerText = `1 ${activeTo.value} = 1.0000 ${activeTo.value}`
+    } else {
 
         async function startProgram() {
-            console.log(left)
             const resp = await fetch(`https://api.exchangerate.host/convert?from=${left}&to=${right}`)
             const data = await resp.json()
             return data
         }
-
         startProgram()
             .then((data) => {
-
                 let value = (1 / `${data.result}`).toFixed(4)
                 priceMoneyTo.innerText = `1 ${left} = ${data.result.toFixed(4)} ${data.query.to}`
                 priceMoneyFrom.innerText = `1 ${data.query.to} = ${value} ${data.query.from}`
-                inputFrom.value = `${data.result}`
+                inputFrom.value = `${data.result.toFixed(4) * Number(inputTo.value).toFixed(4)}`
+                let test = Number(inputFrom.value).toFixed(4)
+                inputFrom.value = test
             })
     }
+}
 
 
 
