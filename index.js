@@ -8,8 +8,10 @@ const allButtonFrom = document.querySelector(".money__change-from")
 const leftSelect = document.querySelector(".list-currency-left")
 const rightSelect = document.querySelector(".list-currency-right")
 const changeButton = document.querySelector(".change-button")
+const loader = document.querySelector(".loader")
+const retry = document.querySelector(".retry")
 
-
+//События
 allButtonTo.addEventListener("click", changeColorTo)
 allButtonFrom.addEventListener("click", changeColorFrom)
 allButtonTo.addEventListener("click", renderCurrencyOnButton)
@@ -19,6 +21,7 @@ leftSelect.addEventListener("change", changeSelectTo)
 inputTo.addEventListener("keyup", generalChange)
 inputFrom.addEventListener("keyup", changeInputFrom)
 changeButton.addEventListener("click", changeCurrencyButton)
+retry.addEventListener("click", changeCurrencyButton)
 
 //Загрузка начальных данных программы. Расчёта доллара и рублей.
 async function startProgram() {
@@ -34,7 +37,6 @@ startProgram()
         inputFrom.value = `${changed.toFixed(4)}`
         priceMoneyFrom.innerText = `1 ${data.query.to} = ${dollars} ${data.query.from}`
     })
-///////////////////////////////////////////////////////////////////
 
 
 //Получаем список всех валют
@@ -80,7 +82,6 @@ function changeColorTo(event) {
 //Меняем цвет кнопок у левой стороны
 function changeColorFrom(event) {
     let button = event.target
-
 
     if (button.tagName === "BUTTON") {
         let oldButton = document.querySelector(".money__change__button-active-from")
@@ -180,7 +181,6 @@ function changeCurrencyButton() {
 
     async function test() {
         const resp = await fetch("https://api.exchangerate.host/latest")
-
         const data = await resp.json()
         return data
     }
@@ -189,6 +189,7 @@ function changeCurrencyButton() {
             const p1 = document.querySelector(".calculate-to")
             const p2 = document.querySelector(".calculate-from")
             let div = document.querySelector(".calculate")
+            loader.style.display = "none"
 
             if (div.classList.contains("active") === false) {
                 div.classList.toggle("active")
@@ -204,6 +205,6 @@ function changeCurrencyButton() {
             }
         })
         .catch((eror) => {
-            alert("Ошибка сервера")
+            loader.style.display = "block"
         })
 }
